@@ -26,7 +26,7 @@ spring:
     database-platform: org.hibernate.dialect.MySQLDialect
     show-sql: true
     hibernate:
-    ddl-auto: none
+     ddl-auto: none
     
 mongo: 
   database: dominus
@@ -35,8 +35,13 @@ mongo:
   port: 27017
   username:
 
-
 ---
+
+system_url:
+  urlGameF1X2: http://vgames2875.com/f1x2games/loadGame.jsp  
+  urlGameMobileF1X2: http://vgames2875.com/f1x2games/loadMobileGame.jsp  
+  urlSevenSlotGame: http://games.sevenslot.net/
+   
 
 spring:
   profiles: docker
