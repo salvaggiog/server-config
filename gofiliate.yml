@@ -9,7 +9,7 @@ eureka:
 
 security:
   basic:
-	enabled: false 
+  	enabled: false 
   
 spring:
   profiles: docker
