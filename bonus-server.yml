@@ -13,6 +13,8 @@ eureka:
 security:
   basic:
     enabled: false
+  
+security:
   oauth2:
     resource:
       userInfoUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/me
