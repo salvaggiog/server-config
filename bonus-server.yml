@@ -34,8 +34,6 @@ mongo:
   port: 27017
   username:
 
-
----
 # The OAuth2 server definition that would be used to send the authorization requests to
 authserver:
     hostname: localhost
