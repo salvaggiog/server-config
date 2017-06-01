@@ -6,6 +6,10 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
+security:
+  basic:
+    enabled: false
+    
 # Datasource and JPA configuration to be used for storing the OAuth authorization details 
 # and token store
 spring:
@@ -30,6 +34,9 @@ mongo:
   port: 27017
   username:
 
+
+---
+   
 
 spring:
   profiles: docker
