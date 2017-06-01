@@ -34,13 +34,14 @@ mongo:
   username:
 
 ---
-   
+
 authserver:
   hostname: localhost
   port: 8899
   contextPath: userauth
 
 spring:
+  profiles: docker
   oauth2:
     resource:
       userInfoUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/me
@@ -49,8 +50,7 @@ spring:
       accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
       userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
     clientId: clientapp
-spring:
-  profiles: docker
+    
 eureka:
 # Register our microservices to Eureka using hostnames in a Docker environment will not work, they will all get 
 # one and the same hostname. Instead we configure them to use its IP address during registration with Eureka.
