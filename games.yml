@@ -44,6 +44,5 @@ authserver:
 spring:
   oauth2:
     resource: 
-      userInfoUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/me
-      preferTokenInfo: true 
-       
+      userInfoUri: http://localhost:${authserver.port}/${authserver.contextPath}/me
+      preferTokenInfo: false      
