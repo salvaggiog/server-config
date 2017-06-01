@@ -6,13 +6,6 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
-# The OAuth2 server definition that would be used to send the authorization requests to
-authserver:
-    hostname: localhost
-    port: 8899
-    contextPath: userauth
-    
-    
 # Datasource and JPA configuration to be used for storing the OAuth authorization details 
 # and token store
 spring:
@@ -36,15 +29,6 @@ mongo:
   password:
   port: 27017
   username:
-
-oauth2:
-    resource: 
-      userInfoUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/me
-      preferTokenInfo: false 
-    client:
-      accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
-      userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
-      clientId: clientapp  
 
 
 spring:
