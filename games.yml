@@ -38,5 +38,13 @@ spring:
 authserver:
     hostname: localhost
     port: 8899
+    
+# Note that the "/user" endpoint needs to provide the principle of the logged in user (/me endpoint)
+spring:
+  oauth2:
+    resource: 
+      userInfoUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/me
+      preferTokenInfo: false 
+
     contextPath: userauth
     
