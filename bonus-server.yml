@@ -9,6 +9,25 @@ eureka:
 #security:
 #  basic:
 #    enabled: false
+
+security:
+  basic:
+    enabled: false
+  oauth2:
+    resource:
+      userInfoUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/me
+      preferTokenInfo: false 
+    client:
+      accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
+      userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
+    clientId: clientapp
+    
+authserver:
+  hostname: localhost
+  port: 8899
+  contextPath: userauth
+
+
 # Datasource and JPA configuration to be used for storing the OAuth authorization details 
 # and token store
 spring:
@@ -34,32 +53,9 @@ mongo:
   username:
 
 ---
-security:
-  oauth2:
-    resource:
-      userInfoUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/me
-      preferTokenInfo: false 
-    client:
-      accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
-      userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
-    clientId: clientapp
-    
-authserver:
-  hostname: localhost
-  port: 8899
-  contextPath: userauth
 
 spring:
-  profiles: docker
-#  oauth2:
-#    resource:
-#      userInfoUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/me
-#      preferTokenInfo: false 
-#    client:
-#      accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
-#      userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
-#    clientId: clientapp
-   
+  profiles: docker  
 eureka:
 # Register our microservices to Eureka using hostnames in a Docker environment will not work, they will all get 
 # one and the same hostname. Instead we configure them to use its IP address during registration with Eureka.
