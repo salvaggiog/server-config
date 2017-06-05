@@ -16,13 +16,6 @@ authserver:
     port: 8899
     contextPath: userauth
 
-# Note that the "/user" endpoint needs to provide the principle of the logged in user (/me endpoint)
-spring:
-  oauth2:
-    resource: 
-      userInfoUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/me
-      preferTokenInfo: false 
-----
 # Datasource and JPA configuration to be used for storing the OAuth authorization details 
 # and token store
 spring:
