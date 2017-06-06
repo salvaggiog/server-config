@@ -44,3 +44,16 @@ spring:
     hibernate:
       ddl-auto: update
  
+urlGameartSeamlessServices=http://dev.pantaloo.com/soap/gameproviderrest/
+urlNetentSeamlessServices=http://dev.pantaloo.com/api/seamless/provider/
+
+
+urlGameF1X2=http://vgames2875.com/f1x2games/loadGame.jsp
+urlGameMobileF1X2=http://vgames2875.com/f1x2games/loadMobileGame.jsp
+
+
+#parametri seven slot
+urlSevenSlotGame=http://games.sevenslot.net/
+urlSevenSlotServices=http://indilab.sevenslot.net/services/
+agencyIdSevenSlot=1
+agencyNameSevenSlot=indilab
