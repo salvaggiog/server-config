@@ -8,7 +8,7 @@ eureka:
 
 security:
   basic:
-   enabled: password
+   enabled: false
 
 # The OAuth2 server definition that would be used to send the authorization requests to
 authserver:
