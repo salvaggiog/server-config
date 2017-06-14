@@ -1,4 +1,2 @@
-management:
-  port: 8091
-  security:
-    enabled: false # management port is internal only. no need to secure it.
+mail:
+  domain: gmail.com
