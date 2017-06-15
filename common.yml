@@ -1,6 +1,6 @@
 server:
   port: 8085
-
+  contextPath: /common 
 
 eureka:
 # Register our microservices to Eureka using hostnames in a Docker environment will not work, they will all get 
