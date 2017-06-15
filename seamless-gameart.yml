@@ -25,13 +25,6 @@ spring:
     hibernate:
       ddl-auto: none
 
-mongo: 
-  database: dominus
-  host: localhost
-  password:
-  port: 27017
-  username:
-
 ---
 
 spring:
