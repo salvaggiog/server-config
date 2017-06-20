@@ -41,7 +41,7 @@ spring:
     hibernate:
       ddl-auto: update
       useUnicode: true
-      characterEncoding: utf8_bin
+      characterEncoding:utf8_bin
       charSet:UTF-8
       autoReconnect:true
       autoReconnectForPools:true      
