@@ -40,8 +40,17 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
+      useUnicode: true
+      characterEncoding: utf8_bin
+      charSet:UTF-8
+      autoReconnect:true
+      autoReconnectForPools:true      
       c3p0:
-         max_size:20
-         min_size:5
-         idle_test_period:600
-      
+         acquire_increment:3
+         max_size:200
+         min_size:3
+         maxIdleTime:120
+         unreturned_connection_timeout:150
+         timeout:180
+         maxConnectionAge:120
+         
