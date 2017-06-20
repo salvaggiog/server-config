@@ -40,4 +40,8 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
- 
+      c3p0:
+         max_size:20
+         min_size:5
+         idle_test_period:600
+      
