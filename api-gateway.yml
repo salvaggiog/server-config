@@ -1,6 +1,6 @@
 # Define the port where the API gateway server would be running
 server:
-  port: 8765
+  port: 8080
 
 # The OAuth2 server definition that would be used to send the authorization requests to
 authserver:
@@ -17,17 +17,34 @@ authserver:
 # requests using zuul
 zuul:
   routes:
-    bonus-server: /bonus/**
-    common: /common/**
-    games: /games/**
-    gofiliate: /gofiliate/**
-    seamless-gameart: /seamless-gameart/**
-    user: 
-      path: /api/loggedinuser/**
+    bonus-server: 
+      path: /bonus/**
+      serviceId: bonus
+      stripPrefix: false
+    common: 
+      path: /common/**
+      serviceId: common
+      stripPrefix: false
+    games:
+      path: /games/**
+      serviceId: games
+      stripPrefix: false
+    gofiliate:
+      path: /gofiliate/**
+      serviceId: gofiliate
+      stripPrefix: false
+    seamless-gameart:
+      path: /gameart/**
+      serviceId: seamless-gameart
+      stripPrefix: false
+    auth-server: 
+      path: /userauth/**
       stripPrefix: true
-      url: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}
+      serviceId: auth-server
 # Define the Eureka server that handles service registration
 eureka:
+  instance:
+      preferIpAddress: true
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
@@ -45,7 +62,7 @@ spring:
     sso:
       home:
         secure: false
-        path: /,/**/*.html
+        path: /common/**,/seamless-gameart/**,/gofiliate/**, /userauth/RegisterUser
     client:
       accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
       userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
