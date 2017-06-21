@@ -27,3 +27,4 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: none
+      
