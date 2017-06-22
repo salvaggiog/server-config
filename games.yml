@@ -34,6 +34,8 @@ spring:
     username: root
     password: pgi1979
     driver-class: com.mysql.jdbc.Driver
+    testOnBorrow=true
+    validationQuery=SELECT 1
   
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
