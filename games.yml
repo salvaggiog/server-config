@@ -38,8 +38,10 @@ spring:
     validationQuery: SELECT 1
   
   jpa:
-    database-platform: org.hibernate.dialect.MySQLDialect
+    database-platform: org.hibernate.dialect.MySQL5Dialect
     show-sql: true
+    entitymanager
+      packagesToScan: com.microservice.mysql
     hibernate:
       ddl-auto: update
       useUnicode: true
@@ -55,4 +57,6 @@ spring:
          unreturned_connection_timeout: 150
          timeout: 180
          maxConnectionAge: 120
+         idle_test_period: 10
+         maxStatements: 0
          
