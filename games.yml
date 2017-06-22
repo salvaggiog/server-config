@@ -58,4 +58,5 @@ spring:
          maxConnectionAge: 120
          idle_test_period: 10
          maxStatements: 0
+         unreturned_connection_timeout: 150
          
