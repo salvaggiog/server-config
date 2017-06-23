@@ -1,26 +1,28 @@
 server:
   port: 8761
 
+spring:
+      config:
+            name: api-gateway
+      application:
+            name: api-gateway
+      cloud:
+            config:
+                failFast: true
+                discovery:
+                  enabled: true
+                uri:
+                     #  http://10.3.1.187:8888/
+                      http://localhost:8888/
+                      
 # Defines the Eureka server that is used by the Netflix OSS components to use as the registry
 # for server discovery
 eureka:
   instance:
     hostname: localhost
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/       
       
----
-
-spring:
-  profiles: docker
-eureka:
-  instance:
-    hostname: docker
-  client:
-    registerWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ 
