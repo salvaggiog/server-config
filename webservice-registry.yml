@@ -20,7 +20,7 @@ spring:
 eureka:
   instance:
     hostname: localhost
-    leaseRenewalIntervalInSeconds:10
+    leaseRenewalIntervalInSeconds: 10
     leaseExpirationDurationInSeconds: 5
     preferIpAddress: true
   client:
