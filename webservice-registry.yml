@@ -3,9 +3,9 @@ server:
 
 spring:
       config:
-            name: api-gateway
+            name: webservice-registry
       application:
-            name: api-gateway
+            name: webservice-registry
       cloud:
             config:
                 failFast: true
