@@ -25,9 +25,7 @@ eureka:
     preferIpAddress: true
   client:
     registerWithEureka: true
-    fetchRegistry: false
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  
-    server:
-      waitTimeInMsWhenSyncEmpty: 0
-      
+   
