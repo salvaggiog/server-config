@@ -21,9 +21,6 @@ eureka:
   client:
     registerWithEureka: true
     fetchRegistry: true
-    leaseRenewalIntervalInSeconds: 10
-    leaseExpirationDurationInSeconds: 5
-    preferIpAddress: true
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  
    
