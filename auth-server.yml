@@ -45,26 +45,3 @@ spring:
          maxConnectionAge: 120
          idle_test_period: 10
          maxStatements: 0
-
-    
-mongo: 
-  database: dominus
-  host: localhost
-  password:
-  port: 27017
-  username:
-
----
-
-
-spring:
-  profiles: docker
-eureka:
-# Register our microservices to Eureka using hostnames in a Docker environment will not work, they will all get 
-# one and the same hostname. Instead we configure them to use its IP address during registration with Eureka.
-  instance:
-    preferIpAddress: true
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-      
