@@ -46,7 +46,6 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect
     show-sql: true
-    entitymanager-packagesToScan: com.microservice.mysql
     hibernate:
       ddl-auto: update
       useUnicode: true
