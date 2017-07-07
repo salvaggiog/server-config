@@ -25,7 +25,7 @@ spring:
     validationQuery: SELECT 1
     
   jpa:
-    database-platform: org.hibernate.dialect.MySQL5Dialect
+    database-platform: org.hibernate.dialect.MySQLDialect
     show-sql: true
     entitymanager-packagesToScan: com.microservice.mysql
     hibernate:
