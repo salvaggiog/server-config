@@ -24,7 +24,7 @@ spring:
       accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
       userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
       clientId: clientapp
-      
+
 # Datasource and JPA configuration to be used for storing the OAuth authorization details 
 # and token store
 spring:
@@ -57,3 +57,4 @@ spring:
          maxConnectionAge: 120
          idle_test_period: 10
          maxStatements: 0
+         
