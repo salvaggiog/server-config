@@ -16,7 +16,7 @@ authserver:
     hostname: localhost
     port: 8899
     contextPath: userauth
-
+        
 # Note that the "/user" endpoint needs to provide the principle of the logged in user (/me endpoint)
 spring:
   oauth2:
@@ -27,7 +27,8 @@ spring:
       accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
       userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
       clientId: clientapp
-
+      
+      
 # Datasource and JPA configuration to be used for storing the OAuth authorization details 
 # and token store
 spring:
