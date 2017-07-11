@@ -17,7 +17,7 @@ authserver:
 # requests using zuul
 zuul:
   routes:
-  messagenet: 
+    messagenet: 
       path: /messagenet/**
       serviceId: messagenet
       stripPrefix: false
