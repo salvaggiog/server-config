@@ -9,11 +9,7 @@ eureka:
     preferIpAddress: true
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-                
-security:
-  user:
-    password: password      
+      defaultZone: http://localhost:8761/eureka/   
 
 # Datasource and JPA configuration to be used for storing the OAuth authorization details 
 # and token store
