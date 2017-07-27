@@ -17,7 +17,7 @@ authserver:
 # requests using zuul
 zuul:
   host:
-    socket-timeout-millis: 3000
+    socket-timeout-millis: 5000
   routes:
     messagenet: 
       path: /messagenet/**
