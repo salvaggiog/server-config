@@ -17,7 +17,8 @@ authserver:
 # requests using zuul
 zuul:
   host:
-    socket-timeout-millis: 5000
+    socket-timeout-millis: 10000
+    connect-timeout-millis: 10000
   routes:
     messagenet: 
       path: /messagenet/**
@@ -51,6 +52,15 @@ zuul:
       path: /userauth/**
       stripPrefix: false
       serviceId: auth-server
+      
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 10000
+                        
 # Define the Eureka server that handles service registration
 eureka:
   instance:
