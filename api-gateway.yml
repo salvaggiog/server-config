@@ -20,7 +20,7 @@ zuul:
     socket-timeout-millis: 10000
     connect-timeout-millis: 10000
   routes:
-  wallet: 
+    wallet: 
       path: /wallet/**
       serviceId: wallet
       stripPrefix: false
