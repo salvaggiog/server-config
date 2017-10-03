@@ -1,6 +1,6 @@
 server:
    port: 8077
-   contextPath: /aggregators
+   contextPath: /games-aggregators
 
 eureka:
   instance:
