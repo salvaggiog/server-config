@@ -5,6 +5,7 @@ hystrix:
     default:
       execution:
         enabled: false
-#        isolation:
-#          thread:
-#            timeoutInMilliseconds: 400000
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 400000
