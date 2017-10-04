@@ -1,5 +1,9 @@
 # We need to setup different context root for the auth server so that we can store separate
 # cookies for both the API gateway as well as the OAuth2 authorization server.
+zuul:
+  host:
+    socket-timeout-millis: 500000
+    connect-timeout-millis: 500000
 server:
   port: 8899
   contextPath: /userauth 
