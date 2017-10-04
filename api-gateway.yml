@@ -1,4 +1,4 @@
-# Define the port where the API gateway server would be running         
+# Define the port where the API gateway server would be running
 server:
   port: 8080
 
@@ -7,7 +7,7 @@ authserver:
     hostname: localhost
     port: 8899
     contextPath: userauth
-
+    
 # Define the routes which determine what URL are serviced by what applications.
 # The application/services are defined in the bootstrap.yml file of individual applications
 # using the spring.application.name property.
@@ -15,7 +15,10 @@ authserver:
 # Note that we don't proxy the calls to the authorization server. The reason being that 
 # Spring cloud security would need to secure the api gateway before it can route the 
 # requests using zuul
-
+zuul:
+  host:
+    socket-timeout-millis: 10000
+    connect-timeout-millis: 10000
   routes:
     games-aggregators:
       path: /games-aggregators/**
@@ -58,6 +61,14 @@ authserver:
       stripPrefix: false
       serviceId: auth-server
       
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 10000
+                        
 # Define the Eureka server that handles service registration
 eureka:
   instance:
