@@ -15,6 +15,13 @@ security:
   user:
     password: password      
 
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 400000
 # Datasource and JPA configuration to be used for storing the OAuth authorization details 
 # and token store
 spring:
