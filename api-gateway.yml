@@ -68,7 +68,7 @@ hystrix:
         isolation:
           strategy: THREAD
           thread:
-            timeoutInMilliseconds: 120000
+            timeoutInMilliseconds: 400000
 
 # Define the Eureka server that handles service registration
 eureka:
