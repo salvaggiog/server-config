@@ -1,15 +1,4 @@
-# Define the port where the API gateway server would be running
-zuul:
-  host:
-    socket-timeout-millis: 500000
-    connect-timeout-millis: 500000
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 400000          
+# Define the port where the API gateway server would be running         
 server:
   port: 8080
 
@@ -69,7 +58,17 @@ authserver:
       stripPrefix: false
       serviceId: auth-server
 
-
+zuul:
+  host:
+    socket-timeout-millis: 500000
+    connect-timeout-millis: 500000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 400000
 
 # Define the Eureka server that handles service registration
 eureka:
