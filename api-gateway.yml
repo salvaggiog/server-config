@@ -69,10 +69,9 @@ hystrix:
     command:
         default:
             execution:
-                isolation:
-                    thread:
-                        timeoutInMilliseconds: 10000
-                        
+                timeout:
+                    enabled:false
+                                              
 # Define the Eureka server that handles service registration
 eureka:
   instance:
