@@ -62,13 +62,13 @@ zuul:
       serviceId: auth-server
       
 hystrix:
-   command:
-     default:
-         execution:
-	     isolation:
-	         strategy: THREAD
-		     thread:
-		         timeoutInMilliseconds: 120000
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 120000
 		
 # Define the Eureka server that handles service registration
 eureka:
