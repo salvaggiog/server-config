@@ -4,7 +4,7 @@ hystrix:
   command:
     default:
       execution:
-        enabled: false
+#        enabled: false
         isolation:
           strategy: THREAD
           thread:
