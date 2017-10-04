@@ -60,15 +60,14 @@ zuul:
       path: /userauth/**
       stripPrefix: false
       serviceId: auth-server
-      
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          strategy: THREAD
-          thread:
-            timeoutInMilliseconds: 400000
+
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 400000      
 
 # Define the Eureka server that handles service registration
 eureka:
