@@ -1,4 +1,15 @@
 # Define the port where the API gateway server would be running
+zuul:
+  host:
+    socket-timeout-millis: 500000
+    connect-timeout-millis: 500000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 400000          
 server:
   port: 8080
 
@@ -15,10 +26,7 @@ authserver:
 # Note that we don't proxy the calls to the authorization server. The reason being that 
 # Spring cloud security would need to secure the api gateway before it can route the 
 # requests using zuul
-zuul:
-  host:
-    socket-timeout-millis: 500000
-    connect-timeout-millis: 500000
+
   routes:
     games-aggregators:
       path: /games-aggregators/**
@@ -61,13 +69,7 @@ zuul:
       stripPrefix: false
       serviceId: auth-server
 
-#hystrix:
-#  command:
-#    default:
-#      execution:
-#        isolation:
-#          thread:
-#            timeoutInMilliseconds: 400000      
+
 
 # Define the Eureka server that handles service registration
 eureka:
