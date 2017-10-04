@@ -4,6 +4,16 @@ zuul:
   host:
     socket-timeout-millis: 500000
     connect-timeout-millis: 500000
+hystrix:
+  command:
+    default:
+      execution:
+#        enabled: false
+        isolation:
+#          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 10000
+
 server:
   port: 8899
   contextPath: /userauth 
