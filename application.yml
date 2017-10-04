@@ -1,2 +1,9 @@
 mail:
   domain: gmail.com
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 400000
