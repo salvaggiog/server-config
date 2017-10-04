@@ -17,8 +17,8 @@ authserver:
 # requests using zuul
 zuul:
   host:
-    socket-timeout-millis: 10000
-    connect-timeout-millis: 10000
+    socket-timeout-millis: 500000
+    connect-timeout-millis: 500000
   routes:
     games-aggregators:
       path: /games-aggregators/**
