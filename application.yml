@@ -1,3 +1,7 @@
+zuul:
+  host:
+    socket-timeout-millis: 500000
+    connect-timeout-millis: 500000
 mail:
   domain: gmail.com
 hystrix:
