@@ -8,10 +8,6 @@ authserver:
     port: 8899
     contextPath: userauth
 
-ribbon:
-  ConnectTimeout :6000
-  ReadTimeout=8000    
-  
 # Define the routes which determine what URL are serviced by what applications.
 # The application/services are defined in the bootstrap.yml file of individual applications
 # using the spring.application.name property.
