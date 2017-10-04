@@ -57,15 +57,7 @@ authserver:
       path: /userauth/**
       stripPrefix: false
       serviceId: auth-server
-
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 400000
-
+      
 # Define the Eureka server that handles service registration
 eureka:
   instance:
