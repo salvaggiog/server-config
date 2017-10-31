@@ -56,6 +56,14 @@ zuul:
       path: /gameart/**
       serviceId: seamless-gameart
       stripPrefix: false
+    seamless-f1x2:
+      path: /seamless-f1x2/**
+      serviceId: seamless-f1x2
+      stripPrefix: false
+    seamless-sevenslot:
+      path: /seamless-sevenslot/**
+      serviceId: seamless-sevenslot
+      stripPrefix: false
     auth-server: 
       path: /userauth/**
       stripPrefix: false
