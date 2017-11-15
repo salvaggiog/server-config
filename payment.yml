@@ -2,10 +2,6 @@ server:
    port: 8092
    contextPath: /payment
 
-security:
-   basic:
-      enabled: false
-
 eureka:
   client:
     serviceUrl:
