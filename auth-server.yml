@@ -40,7 +40,7 @@ security:
 # and token store
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3307/core_indiana_reticulum
+    url: jdbc:mysql://localhost:3307/core_dlg_platform
     username: root
     password: pgi1979
     driver-class: com.mysql.jdbc.Driver
