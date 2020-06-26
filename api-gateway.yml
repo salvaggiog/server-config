@@ -98,7 +98,7 @@ spring:
     sso:
       home:
         secure: false
-        path: /common/**,/seamless-gameart/**,/gofiliate/**, /games/**, /userauth/**, /userauth/oauth/**
+        path: /common/**,/seamless-gameart/**,/gofiliate/**, /games/**, /userauth/**, /userauth/oauth/**, **/swagger-ui.html
     client:
       accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
       userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
