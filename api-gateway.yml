@@ -21,8 +21,8 @@ zuul:
     connect-timeout-millis: 10000
   routes:
     games-aggregators:
-      path: /games-aggregators/**
-      serviceId: games-aggregators
+      path: /system-admin/**
+      serviceId: system-admin
       stripPrefix: false
     wallet: 
       path: /wallet/**
