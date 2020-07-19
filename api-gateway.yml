@@ -84,10 +84,6 @@ zuul:
       path: /survey/**
       serviceId: survey
       stripPrefix: false
-    system-admin:
-      path: /system-admin/**
-      serviceId: system-admin
-      stripPrefix: false
     tasks:
       path: /tasks/**
       serviceId: tasks
