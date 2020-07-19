@@ -1,6 +1,6 @@
 server:
-   port: 8808
-   contextPath: /reports
+   port: 8806
+   contextPath: /email
 eureka:
   instance:
     preferIpAddress: true

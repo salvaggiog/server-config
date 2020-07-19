@@ -1,6 +1,6 @@
 server:
-   port: 8808
-   contextPath: /reports
+   port: 8812
+   contextPath: /script-builder
 eureka:
   instance:
     preferIpAddress: true

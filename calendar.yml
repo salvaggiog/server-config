@@ -1,6 +1,6 @@
 server:
-   port: 8808
-   contextPath: /reports
+   port: 8803
+   contextPath: /calendar
 eureka:
   instance:
     preferIpAddress: true

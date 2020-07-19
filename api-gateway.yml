@@ -7,68 +7,112 @@ authserver:
     hostname: localhost
     port: 8899
     contextPath: userauth
-    
+
 # Define the routes which determine what URL are serviced by what applications.
 # The application/services are defined in the bootstrap.yml file of individual applications
 # using the spring.application.name property.
 
-# Note that we don't proxy the calls to the authorization server. The reason being that 
-# Spring cloud security would need to secure the api gateway before it can route the 
+# Note that we don't proxy the calls to the authorization server. The reason being that
+# Spring cloud security would need to secure the api gateway before it can route the
 # requests using zuul
 zuul:
   host:
     socket-timeout-millis: 10000
     connect-timeout-millis: 10000
   routes:
-    games-aggregators:
+    system-admin:
       path: /system-admin/**
       serviceId: system-admin
       stripPrefix: false
-    wallet: 
-      path: /csm/**
-      serviceId: csm
+    cms:
+      path: /cms/**
+      serviceId: cms
       stripPrefix: false
-    messagenet: 
-      path: /messagenet/**
-      serviceId: messagenet
+    calendar:
+      path: /calendar/**
+      serviceId: calendar
       stripPrefix: false
-    payment: 
-      path: /payment/**
-      serviceId: payment
+    dms:
+      path: /dms/**
+      serviceId: dms
       stripPrefix: false
-    bonus-server: 
-      path: /bonus/**
-      serviceId: bonus
+    elearning:
+      path: /elearning/**
+      serviceId: elearning
       stripPrefix: false
-    common: 
+    email:
+      path: /email/**
+      serviceId: email
+      stripPrefix: false
+    logs:
+      path: /logs/**
+      serviceId: logs
+      stripPrefix: false
+    reports:
+      path: /reports/**
+      serviceId: reports
+      stripPrefix: false
+    repository:
+      path: /repository/**
+      serviceId: repository
+      stripPrefix: false
+    rss:
+      path: /rss/**
+      serviceId: rss
+      stripPrefix: false
+    scheduler:
+      path: /scheduler/**
+      serviceId: scheduler
+      stripPrefix: false
+    script-builder:
+      path: /script-builder/**
+      serviceId: script-builder
+      stripPrefix: false
+    sms:
+      path: /sms/**
+      serviceId: sms
+      stripPrefix: false
+    social:
+      path: /social/**
+      serviceId: social
+      stripPrefix: false
+    support:
+      path: /support/**
+      serviceId: support
+      stripPrefix: false
+    survey:
+      path: /survey/**
+      serviceId: survey
+      stripPrefix: false
+    system-admin:
+      path: /system-admin/**
+      serviceId: system-admin
+      stripPrefix: false
+    tasks:
+      path: /tasks/**
+      serviceId: tasks
+      stripPrefix: false
+    ticket:
+      path: /ticket/**
+      serviceId: ticket
+      stripPrefix: false
+    traslator:
+      path: /traslator/**
+      serviceId: traslator
+      stripPrefix: false
+    xml:
+      path: /xml/**
+      serviceId: xml
+      stripPrefix: false
+    common:
       path: /common/**
       serviceId: common
       stripPrefix: false
-    games:
-      path: /games/**
-      serviceId: games
-      stripPrefix: false
-    gofiliate:
-      path: /gofiliate/**
-      serviceId: gofiliate
-      stripPrefix: false
-    seamless-gameart:
-      path: /gameart/**
-      serviceId: seamless-gameart
-      stripPrefix: false
-    seamless-f1x2:
-      path: /seamless-f1x2/**
-      serviceId: seamless-f1x2
-      stripPrefix: false
-    seamless-sevenslot:
-      path: /seamless-sevenslot/**
-      serviceId: seamless-sevenslot
-      stripPrefix: false
-    auth-server: 
+    auth-server:
       path: /userauth/**
       stripPrefix: false
       serviceId: auth-server
-      
+
 hystrix:
     command:
         default:
@@ -76,7 +120,7 @@ hystrix:
                 isolation:
                     thread:
                         timeoutInMilliseconds: 10000
-                        
+
 # Define the Eureka server that handles service registration
 eureka:
   instance:
@@ -84,8 +128,8 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-    
-# Define settings for Single-Sign-On with OAuth2; this means that we need to relay the OAuth token 
+
+# Define settings for Single-Sign-On with OAuth2; this means that we need to relay the OAuth token
 # to the subsequent resources that are proxied by the Zuul api gateway.
 
 # The home definition tells us to allow anonymous access (secure: false) to the static resources that
@@ -98,7 +142,7 @@ spring:
     sso:
       home:
         secure: false
-        path: /common/**,/csm/**,/gofiliate/**, /games/**, /userauth/**, /userauth/oauth/**, **/swagger-ui.html
+        path: /common/**,/cms/**, /userauth/**, /userauth/oauth/**, **/swagger-ui.html
     client:
       accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
       userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
@@ -109,10 +153,10 @@ spring:
 # information about grants and authentication in the token itself.
 
 # Note that the "/user" endpoint needs to provide the principle of the logged in user (/me endpoint)
-    resource: 
+    resource:
       userInfoUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/me
-      preferTokenInfo: false 
-    
+      preferTokenInfo: false
+
 # Datasource and JPA configuration to be used for using the same tokenstore as the authorization server for
 # the defined resource server. Note that there can't be 2 different root nodes, so datasource falls under the "spring" node.
   datasource:
@@ -120,7 +164,7 @@ spring:
     username: root
     password: pgi1979
     driver-class: com.mysql.jdbc.Driver
-  
+
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
     show-sql: true

@@ -1,6 +1,6 @@
 server:
-   port: 8808
-   contextPath: /reports
+   port: 8819
+   contextPath: /traslator
 eureka:
   instance:
     preferIpAddress: true

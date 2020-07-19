@@ -13,4 +13,4 @@ hystrix:
             timeoutInMilliseconds: 400000
 
 mail:
-  domain: gmail.com
+  domain: dlg.com
