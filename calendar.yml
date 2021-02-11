@@ -43,7 +43,7 @@ spring:
     show-sql: true
     entitymanager-packagesToScan: com.microservice.mysql
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
       useUnicode: true
       characterEncoding: utf8_bin
       charSet: UTF-8
