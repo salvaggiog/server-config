@@ -138,7 +138,7 @@ spring:
     sso:
       home:
         secure: false
-        path: /common/**,/cms/public/**,/traslator/public/**,/userauth/**, /userauth/oauth/**, **/swagger-ui.html
+        path: /common/**,/cms/public/**,/email/ws/email/**,/email/ws/sms/**,/traslator/public/**,/userauth/**, /userauth/oauth/**, **/swagger-ui.html
     client:
       accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
       userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
