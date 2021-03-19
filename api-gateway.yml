@@ -20,13 +20,13 @@ zuul:
     socket-timeout-millis: 10000
     connect-timeout-millis: 10000
   routes:
-    system-admin:
-      path: /system-admin/**
-      serviceId: system-admin
+    w1:
+      path: /w1/**
+      serviceId: w1
       stripPrefix: false
     cms:
-      path: /cms/**
-      serviceId: cms
+      path: /w2/**
+      serviceId: w2
       stripPrefix: false
     calendar:
       path: /calendar/**
@@ -138,7 +138,7 @@ spring:
     sso:
       home:
         secure: false
-        path: /common/**,/cms/public/**,/email/ws/**,/traslator/public/**,/userauth/**, /userauth/oauth/**, **/swagger-ui.html
+        path: /common/**,/w1/public/**,/w2/ws/**,/w2/public/**,/userauth/**, /userauth/oauth/**, **/swagger-ui.html
     client:
       accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
       userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
