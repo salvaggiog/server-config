@@ -34,7 +34,7 @@ spring:
     url: jdbc:mysql://localhost:3307/core_dlg_platform
     username: root
     password: pgi1979
-    driver-class: com.mysql.jdbc.Driver
+    driver-class: com.mysql.cj.jdbc.Driver
     testOnBorrow: true
     validationQuery: SELECT 1
 
