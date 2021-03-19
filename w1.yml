@@ -34,14 +34,14 @@ spring:
     url: jdbc:mysql://localhost:3307/core_dlg_platform
     username: root
     password: pgi1979
-    driver-class: com.mysql.jdbc.Driver
+    driver-class: com.mysql.cj.jdbc.Driver
     testOnBorrow: true
     validationQuery: SELECT 1
 
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
-    entitymanager-packagesToScan: com.microservice.mysql
+    entitymanager-packagesToScan: com.w1.entity
     hibernate:
       ddl-auto: none
       useUnicode: true
