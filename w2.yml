@@ -1,6 +1,6 @@
 server:
    port: 8802
-   contextPath: /w1
+   contextPath: /w2
 eureka:
   instance:
     preferIpAddress: true
@@ -41,7 +41,7 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
-    entitymanager-packagesToScan: com.w1.entity
+    entitymanager-packagesToScan: com.w2.entity
     hibernate:
       ddl-auto: none
       useUnicode: true
