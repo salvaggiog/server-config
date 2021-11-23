@@ -24,42 +24,10 @@ zuul:
       path: /w1/**
       serviceId: w1
       stripPrefix: false
-    cms:
+    w2:
       path: /w2/**
       serviceId: w2
-      stripPrefix: false
-    calendar:
-      path: /calendar/**
-      serviceId: calendar
-      stripPrefix: false
-    dms:
-      path: /dms/**
-      serviceId: dms
-      stripPrefix: false
-    elearning:
-      path: /elearning/**
-      serviceId: elearning
-      stripPrefix: false
-    email:
-      path: /email/**
-      serviceId: email
-      stripPrefix: false
-    logs:
-      path: /logs/**
-      serviceId: logs
-      stripPrefix: false
-    reports:
-      path: /reports/**
-      serviceId: reports
-      stripPrefix: false
-    repository:
-      path: /repository/**
-      serviceId: repository
-      stripPrefix: false
-    rss:
-      path: /rss/**
-      serviceId: rss
-      stripPrefix: false
+      stripPrefix: false    
     scheduler:
       path: /scheduler/**
       serviceId: scheduler
@@ -67,39 +35,7 @@ zuul:
     script-builder:
       path: /script-builder/**
       serviceId: script-builder
-      stripPrefix: false
-    sms:
-      path: /sms/**
-      serviceId: sms
-      stripPrefix: false
-    social:
-      path: /social/**
-      serviceId: social
-      stripPrefix: false
-    support:
-      path: /support/**
-      serviceId: support
-      stripPrefix: false
-    survey:
-      path: /survey/**
-      serviceId: survey
-      stripPrefix: false
-    tasks:
-      path: /tasks/**
-      serviceId: tasks
-      stripPrefix: false
-    ticket:
-      path: /ticket/**
-      serviceId: ticket
-      stripPrefix: false
-    traslator:
-      path: /traslator/**
-      serviceId: traslator
-      stripPrefix: false
-    xml:
-      path: /xml/**
-      serviceId: xml
-      stripPrefix: false
+      stripPrefix: false   
     common:
       path: /common/**
       serviceId: common
